@@ -8,4 +8,4 @@ env.bak/
 venv.bak/
 
 # IDE
-.idea
+.idea/
