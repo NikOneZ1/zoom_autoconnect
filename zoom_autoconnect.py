@@ -1,4 +1,5 @@
 import os
+import time
 import datetime
 import webbrowser
 import tkinter as tk
@@ -22,8 +23,8 @@ def add_conference():
     link = tk.Entry(master=window)
     link.grid(row=number[0], column=0, sticky="nsew")
     conf_fields[number[0]].append(link)
-    time = tk.Entry(master=window)
-    time.grid(row=number[0], column=1)
+    _time = tk.Entry(master=window)
+    _time.grid(row=number[0], column=1)
     conf_fields[number[0]].append(time)
 
 
@@ -31,7 +32,7 @@ def add_conference():
 def enter_conf(link, path):
     os.system(r"taskkill /f /im Zoom.exe")
     os.startfile(path)
-    window.after(8)
+    time.sleep(8)
     webbrowser.open(link)
 
 
