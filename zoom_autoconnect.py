@@ -13,19 +13,19 @@ window.columnconfigure([0, 1, 2], minsize=50, weight=1)
 
 conf_fields = {}
 conferences = []
-number = [0]
+conf_number = [1]
 
 
 # adding conference fields to the application window
 def add_conference():
-    number[0] += 1
-    conf_fields[number[0]] = []
+    conf_number[0] += 1
+    conf_fields[conf_number[0]] = []
     link = tk.Entry(master=window)
-    link.grid(row=number[0], column=0, sticky="nsew")
-    conf_fields[number[0]].append(link)
+    link.grid(row=conf_number[0], column=0, sticky="nsew")
+    conf_fields[conf_number[0]].append(link)
     _time = tk.Entry(master=window)
-    _time.grid(row=number[0], column=1)
-    conf_fields[number[0]].append(time)
+    _time.grid(row=conf_number[0], column=1)
+    conf_fields[conf_number[0]].append(time)
 
 
 # entering conference
@@ -78,5 +78,11 @@ start_btn.grid(row=0, column=0, sticky="nsew")
 
 btn_add = tk.Button(master=window, text="Add conference", command=add_conference)
 btn_add.grid(row=0, column=1, sticky="nsew")
+
+link_label = tk.Label(master=window, text="Conference link")
+link_label.grid(row=1, column=0, sticky="nsew")
+
+date_label = tk.Label(master=window, text="Date: (year-month-day-hour-minutes)")
+date_label.grid(row=1, column=1, sticky="nsew")
 
 window.mainloop()
